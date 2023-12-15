@@ -154,7 +154,6 @@ List List::operator+(const List& sec) const {
 
 int List::find_count(int age, int& counter) const {
     ListItem* temp = First;
-    counter = 0;
     while (temp != nullptr) {
         counter++;
         if (temp->age == age) {
@@ -162,6 +161,7 @@ int List::find_count(int age, int& counter) const {
         }
         temp = temp->Next;
     }
+    counter = -1;
     return counter;
 }
 

@@ -13,7 +13,10 @@ int main(){
         Z.ListPrint();
         L.DeleteInfo(10);
         L.ListPrint();
+        int a = -1;
+        L.find_count(40, a);
         L.ForEach(modify);
+        std::cout << "Number of comparisons: " << a << std::endl;
         L.ListPrint();
         L.ForEach(Print);
     }
