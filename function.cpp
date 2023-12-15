@@ -165,11 +165,11 @@ int List::find_count(int age, int& counter) const {
     return counter;
 }
 
-int modify(int a){
+int modify(int& a){
     return a + 1;
 }
 
-void List::ForEach (int Fun(int a)){
+void List::ForEach (int Fun(int& a)){
     ListItem *P = First;
     if (P == NULL)
         std::cout << "List is empty!" << std::endl;
@@ -180,4 +180,25 @@ void List::ForEach (int Fun(int a)){
             temp = temp->Next;
         }
     }
+}
+
+void Print(int x)
+{
+    std::cout << x << std::endl;
+}
+
+void List::ForEach(void Fun(int))const
+{
+    ListItem *P = First;
+    if (P == NULL)
+        std::cout << "List is empty!" << std::endl;
+    if (P != NULL)
+    {
+        std::cout << "List elements: " << std::endl;
+        while(P != NULL)
+        {
+            Fun(P->age);
+            P = P->Next;
+        }
+    };
 }

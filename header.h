@@ -24,7 +24,8 @@ public:
     void ListPrint() const;
     List operator+(const List& sec) const;
     int find_count(int age, int& counter) const;
-    void ForEach (int Fun(int a));
+    void ForEach (int(int&));
+    void ForEach (void(int))const;
 protected:
     void Clone(const List &);
 };

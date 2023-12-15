@@ -15,6 +15,7 @@ int main(){
         L.ListPrint();
         L.ForEach(modify);
         L.ListPrint();
+        L.ForEach(Print);
     }
     catch (char*)
     {
